@@ -1,38 +1,36 @@
-import bpy.types
+import bpy
 
 from .. import utils
-
-print(dir(utils))
 
 class TestPanelPrefs(bpy.types.AddonPreferences):
     bl_idname = utils.common.module()
 
-    test_string: bpy.types.StringProperty(
+    test_string: bpy.props.StringProperty(
         name='Test String',
         description='String for testing',
-        default="Empty String isn't so Empty is it?",
+        default='Empty String isnt so Empty is it?',
         subtype='DIR_PATH',
     )
 
-    test_bool: bpy.types.BoolProperty(
+    test_bool: bpy.props.BoolProperty(
         name = 'Test Bool',
         description='Bool for testing purposes',
         default=False,
     )
 
-    test_bool_string: bpy.types.StringProperty(
+    test_bool_string: bpy.props.StringProperty(
         name='Test Bool String Reveal',
         description='You see this if test_bool is set to true',
         default='Empty String Again?'
     )
 
-    test_bool_bool: bpy.types.BoolProperty(
+    test_bool_bool: bpy.props.BoolProperty(
         name = 'Test Bool Bool',
         description='You see this if test_bool is set to true',
         default=False,
     )
 
-    test_int: bpy.types.IntProperty(
+    test_int: bpy.props.IntProperty(
         name='Test Int',
         description='Testing the int property',
         default=2,
@@ -40,7 +38,7 @@ class TestPanelPrefs(bpy.types.AddonPreferences):
         max=60
     )
 
-    test_enum: bpy.types.EnumProperty(
+    test_enum: bpy.props.EnumProperty(
         name='Test Enum',
         items=[
             ('FIRST', 'First Enum', 'The first testing enum'),

@@ -1,6 +1,6 @@
 # import bpy
-from . import ui
 from . import props
+from . import ui
 
 def register():
     ui.register()
